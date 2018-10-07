@@ -1,3 +1,5 @@
+require_relative 'wagon.rb'
+
 class CargoWagon < Wagon
   def initialize(number, free_volume)
     super(number)
@@ -12,7 +14,5 @@ class CargoWagon < Wagon
     raise "Недостаточно места" if vol > @free_volume
     @free_volume -= vol
     @taken_volume += vol
-  rescue StandardError => e
-    puts e.message
   end
 end
